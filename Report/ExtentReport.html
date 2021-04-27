@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Cucumber Framework</title>
+
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+							<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Cucumber Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sep 4, 2020 11:28:30 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>70</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>To perform a Hotel booking</span>
+						<span class='test-time'>Sep 4, 2020 11:28:30 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 25s+289ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User verifies validations for fields in Hotel booking page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user has navigated to login portal</span>
+				<div class='pre'>LoginPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid user name and password and clicks on login button</span>
+				<div class='pre'><table><tr><td>UserName</td><td>Password</td></tr><tr><td>admin</td><td>admin</td></tr></table></div>
+				<div class='pre'>LoginUserName element is found and user name is sent</div>
+				<div class='pre'>LoginPassword element is found and password is sent</div>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then the user is logged into hotel booking application</span>
+				<div class='pre'>HotelBookingPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user is in Hotel booking page</span>
+				<div class='pre'>HotelBookingPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validations for first name field</span>
+				<div class='pre'><table><tr><td>FirstName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>FirstName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the First Name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid first name</span>
+				<div class='pre'><table><tr><td>FirstName</td></tr><tr><td>FName1</td></tr></table></div>
+				<div class='pre'>FirstName element is found and "FName1"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for last name field</span>
+				<div class='pre'><table><tr><td>LastName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>LastName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Last Name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid last name</span>
+				<div class='pre'><table><tr><td>LastName</td></tr><tr><td>LName1</td></tr></table></div>
+				<div class='pre'>LastName element is found and "LName1"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='11' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for email field</span>
+				<div class='pre'><table><tr><td>Validation</td><td>EmailId</td></tr><tr><td>Empty</td><td></td></tr><tr><td>Invalid</td><td>email</td></tr></table></div>
+				<div class='pre'>EmailId element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Email" alert is found</div>
+				<div class='pre'>EmailId element is found and "email"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Email Id." alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='12' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid email id</span>
+				<div class='pre'><table><tr><td>EmailId</td></tr><tr><td>test@test.com</td></tr></table></div>
+				<div class='pre'>EmailId element is found and "test@test.com"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='13' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for mobile number field</span>
+				<div class='pre'><table><tr><td>Validation</td><td>MobileNo</td></tr><tr><td>Empty</td><td></td></tr><tr><td>Invalid</td><td>98574575</td></tr><tr><td>Invalid</td><td>4541247821</td></tr></table></div>
+				<div class='pre'>MobileNumber element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Mobile No." alert is found</div>
+				<div class='pre'>MobileNumber element is found and "98574575"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Contact no." alert is found</div>
+				<div class='pre'>MobileNumber element is found and "4541247821"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Contact no." alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='14' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid mobile number</span>
+				<div class='pre'><table><tr><td>MobileNo</td></tr><tr><td>8745621478</td></tr></table></div>
+				<div class='pre'>MobileNumber element is found and "8745621478"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='15' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid address</span>
+				<div class='pre'><table><tr><td>Address</td></tr><tr><td>Test address</td></tr></table></div>
+				<div class='pre'>Address element is found and "Test address"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for city dropdown</span>
+				<div class='pre'><table><tr><td>City</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CityDropDown element is found and ""is selected</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please select city" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects a valid city</span>
+				<div class='pre'><table><tr><td>City</td></tr><tr><td>Chennai</td></tr></table></div>
+				<div class='pre'>CityDropDown element is found and "Chennai"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for State dropdown</span>
+				<div class='pre'><table><tr><td>State</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>StateDropDown element is found and ""is selected</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please select state" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='19' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects a valid state</span>
+				<div class='pre'><table><tr><td>State</td></tr><tr><td>Tamilnadu</td></tr></table></div>
+				<div class='pre'>StateDropDown element is found and "Tamilnadu"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='20' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects number of persons</span>
+				<div class='pre'><table><tr><td>Persons</td></tr><tr><td>5</td></tr></table></div>
+				<div class='pre'>PersonsDropDown element is found and "5"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies the number of rooms allocated by application</span>
+				<div class='pre'>No of rooms to be booked as per persons entered is 2</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='22' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for card holder name</span>
+				<div class='pre'><table><tr><td>CardHolderName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CardHolderName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Card holder name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='23' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid card holder name field</span>
+				<div class='pre'><table><tr><td>CardHolderName</td></tr><tr><td>Test</td></tr></table></div>
+				<div class='pre'>CardHolderName element is found and "Test"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='24' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation of card number field</span>
+				<div class='pre'><table><tr><td>CardNumber</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>DebitCardNumber element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Debit card Number" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user verifies a valid card number</span>
+				<div class='pre'><table><tr><td>CardNumber</td></tr><tr><td>8475956352147536</td></tr></table></div>
+				<div class='pre'>DebitCardNumber element is found and "8475956352147536"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation of cvv field</span>
+				<div class='pre'><table><tr><td>CVV</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CVV element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the CVV" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid cvv</span>
+				<div class='pre'><table><tr><td>CVV</td></tr><tr><td>129</td></tr></table></div>
+				<div class='pre'>CVV element is found and "129"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates expiry month field</span>
+				<div class='pre'><table><tr><td>ExpiryMonth</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>ExpirationMonth element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill expiration month" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='29' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid expiry month</span>
+				<div class='pre'><table><tr><td>ExpiryMonth</td></tr><tr><td>05</td></tr></table></div>
+				<div class='pre'>ExpirationMonth element is found and "05"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='30' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates expiry year field</span>
+				<div class='pre'><table><tr><td>ExpiryYear</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>ExpirationYear element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the expiration year" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='31' status='pass'>
+	<span class='duration right label'>0h 0m 9s+902ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User validates input fields and creates a hotel booking</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='32' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user has navigated to login portal</span>
+				<div class='pre'>LoginPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='33' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid user name and password and clicks on login button</span>
+				<div class='pre'><table><tr><td>UserName</td><td>Password</td></tr><tr><td>admin</td><td>admin</td></tr></table></div>
+				<div class='pre'>LoginUserName element is found and user name is sent</div>
+				<div class='pre'>LoginPassword element is found and password is sent</div>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='34' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then the user is logged into hotel booking application</span>
+				<div class='pre'>HotelBookingPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='35' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user is in Hotel booking page</span>
+				<div class='pre'>HotelBookingPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='36' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validations for first name field</span>
+				<div class='pre'><table><tr><td>FirstName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>FirstName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the First Name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='37' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid first name</span>
+				<div class='pre'><table><tr><td>FirstName</td></tr><tr><td>FName1</td></tr></table></div>
+				<div class='pre'>FirstName element is found and "FName1"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='38' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for last name field</span>
+				<div class='pre'><table><tr><td>LastName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>LastName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Last Name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='39' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid last name</span>
+				<div class='pre'><table><tr><td>LastName</td></tr><tr><td>LName1</td></tr></table></div>
+				<div class='pre'>LastName element is found and "LName1"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='40' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for email field</span>
+				<div class='pre'><table><tr><td>Validation</td><td>EmailId</td></tr><tr><td>Empty</td><td></td></tr><tr><td>Invalid</td><td>email</td></tr></table></div>
+				<div class='pre'>EmailId element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Email" alert is found</div>
+				<div class='pre'>EmailId element is found and "email"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Email Id." alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='41' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid email id</span>
+				<div class='pre'><table><tr><td>EmailId</td></tr><tr><td>test@test.com</td></tr></table></div>
+				<div class='pre'>EmailId element is found and "test@test.com"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='42' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for mobile number field</span>
+				<div class='pre'><table><tr><td>Validation</td><td>MobileNo</td></tr><tr><td>Empty</td><td></td></tr><tr><td>Invalid</td><td>98574575</td></tr><tr><td>Invalid</td><td>4541247821</td></tr></table></div>
+				<div class='pre'>MobileNumber element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Mobile No." alert is found</div>
+				<div class='pre'>MobileNumber element is found and "98574575"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Contact no." alert is found</div>
+				<div class='pre'>MobileNumber element is found and "4541247821"is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please enter valid Contact no." alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='43' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid mobile number</span>
+				<div class='pre'><table><tr><td>MobileNo</td></tr><tr><td>8745621478</td></tr></table></div>
+				<div class='pre'>MobileNumber element is found and "8745621478"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='44' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid address</span>
+				<div class='pre'><table><tr><td>Address</td></tr><tr><td>Test address</td></tr></table></div>
+				<div class='pre'>Address element is found and "Test address"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='45' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for city dropdown</span>
+				<div class='pre'><table><tr><td>City</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CityDropDown element is found and ""is selected</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please select city" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='46' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects a valid city</span>
+				<div class='pre'><table><tr><td>City</td></tr><tr><td>Chennai</td></tr></table></div>
+				<div class='pre'>CityDropDown element is found and "Chennai"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='47' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for State dropdown</span>
+				<div class='pre'><table><tr><td>State</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>StateDropDown element is found and ""is selected</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please select state" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='48' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects a valid state</span>
+				<div class='pre'><table><tr><td>State</td></tr><tr><td>Tamilnadu</td></tr></table></div>
+				<div class='pre'>StateDropDown element is found and "Tamilnadu"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='49' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects number of persons</span>
+				<div class='pre'><table><tr><td>Persons</td></tr><tr><td>5</td></tr></table></div>
+				<div class='pre'>PersonsDropDown element is found and "5"is selected</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='50' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies the number of rooms allocated by application</span>
+				<div class='pre'>No of rooms to be booked as per persons entered is 2</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='51' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation for card holder name</span>
+				<div class='pre'><table><tr><td>CardHolderName</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CardHolderName element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Card holder name" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='52' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid card holder name field</span>
+				<div class='pre'><table><tr><td>CardHolderName</td></tr><tr><td>Test</td></tr></table></div>
+				<div class='pre'>CardHolderName element is found and "Test"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='53' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation of card number field</span>
+				<div class='pre'><table><tr><td>CardNumber</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>DebitCardNumber element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the Debit card Number" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='54' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user verifies a valid card number</span>
+				<div class='pre'><table><tr><td>CardNumber</td></tr><tr><td>8475956352147536</td></tr></table></div>
+				<div class='pre'>DebitCardNumber element is found and "8475956352147536"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='55' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user verifies validation of cvv field</span>
+				<div class='pre'><table><tr><td>CVV</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>CVV element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the CVV" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='56' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid cvv</span>
+				<div class='pre'><table><tr><td>CVV</td></tr><tr><td>129</td></tr></table></div>
+				<div class='pre'>CVV element is found and "129"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='57' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates expiry month field</span>
+				<div class='pre'><table><tr><td>ExpiryMonth</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>ExpirationMonth element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill expiration month" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='58' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid expiry month</span>
+				<div class='pre'><table><tr><td>ExpiryMonth</td></tr><tr><td>05</td></tr></table></div>
+				<div class='pre'>ExpirationMonth element is found and "05"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='59' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates expiry year field</span>
+				<div class='pre'><table><tr><td>ExpiryYear</td></tr><tr><td></td></tr></table></div>
+				<div class='pre'>ExpirationYear element is found and ""is entered</div>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>"Please fill the expiration year" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='60' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid expiry year</span>
+				<div class='pre'><table><tr><td>ExpiryYear</td></tr><tr><td>2025</td></tr></table></div>
+				<div class='pre'>ExpirationYear element is found and "2025"is entered</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='61' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user clicks on confirm booking button</span>
+				<div class='pre'>ConfirmBookingButton element is found and clicked</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='62' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates success of hotel booking</span>
+				<div class='pre'>BookingSuccessMessage element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='63'>
+					<div class='test-heading'>
+						<span class='test-name'>Login to Hotel booking application</span>
+						<span class='test-time'>Sep 4, 2020 11:29:06 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='64' status='pass'>
+	<span class='duration right label'>0h 0m 4s+145ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify validation messages for mandatory fields in Login page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='65' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user has navigated to login portal</span>
+				<div class='pre'>LoginPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='66' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user clicks on login button without entering a valid user name</span>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='67' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then a validataion message is displayed mentioning user name is mandatory for login</span>
+				<div class='pre'>ErrorLoginUserName element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='68' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters user name without a password and clicks on login button</span>
+				<div class='pre'><table><tr><td>UserName</td></tr><tr><td>admin</td></tr></table></div>
+				<div class='pre'>LoginUserName element is found and user name is sent</div>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='69' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then a validataion message is displayed mentioning password is mandatory for login</span>
+				<div class='pre'>ErrorLoginPassword element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='70' status='pass'>
+	<span class='duration right label'>0h 0m 4s+372ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify login to hotel booking application</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='71' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user has navigated to login portal</span>
+				<div class='pre'>LoginPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='72' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a valid user name and password and clicks on login button</span>
+				<div class='pre'><table><tr><td>UserName</td><td>Password</td></tr><tr><td>admin</td><td>admin</td></tr></table></div>
+				<div class='pre'>LoginUserName element is found and user name is sent</div>
+				<div class='pre'>LoginPassword element is found and password is sent</div>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='73' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then the user is logged into hotel booking application</span>
+				<div class='pre'>HotelBookingPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='74' status='pass'>
+	<span class='duration right label'>0h 0m 4s+59ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify invalid login to hotel booking application</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='75' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given the user has navigated to login portal</span>
+				<div class='pre'>LoginPageHeading element is displayed</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='76' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters a invalid user name and password and clicks on login button</span>
+				<div class='pre'><table><tr><td>UserName</td><td>Password</td></tr><tr><td>test</td><td>test</td></tr></table></div>
+				<div class='pre'>LoginUserName element is found and user name is sent</div>
+				<div class='pre'>LoginPassword element is found and password is sent</div>
+				<div class='pre'>LoginButton element is found and click</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='77' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user validates error message for invalid login</span>
+				<div class='pre'>"Invalid login! Please try again!" alert is found</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>Saravanan</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>5</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 5</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Sep 4, 2020 11:28:30 AM</td>
+                                                <td class='linked' test-id='2'>To perform a Hotel booking.User verifies validations for fields in Hotel booking page</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sep 4, 2020 11:28:56 AM</td>
+                                                <td class='linked' test-id='31'>To perform a Hotel booking.User validates input fields and creates a hotel booking</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sep 4, 2020 11:29:06 AM</td>
+                                                <td class='linked' test-id='64'>Login to Hotel booking application.Verify validation messages for mandatory fields in Login page</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sep 4, 2020 11:29:10 AM</td>
+                                                <td class='linked' test-id='70'>Login to Hotel booking application.Verify login to hotel booking application</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sep 4, 2020 11:29:15 AM</td>
+                                                <td class='linked' test-id='74'>Login to Hotel booking application.Verify invalid login to hotel booking application</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>2</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>5</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>70</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sep 4, 2020 11:28:30 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sep 4, 2020 11:29:19 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>48,879ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>user name</td>
+								<td>saravanan</td>
+							</tr>
+							<tr>
+								<td>Time zone</td>
+								<td>Asia/Calcutta</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows 8.1</td>
+							</tr>
+							<tr>
+								<td>Application</td>
+								<td>Hotel booking app</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 5,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 70,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>
